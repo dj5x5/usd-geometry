@@ -32,3 +32,6 @@ output/
 *.tmp
 *.log
 EOF
+OpenUSD/
+~/usd_install/
+usd_install/
