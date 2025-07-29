@@ -15,4 +15,10 @@ source setup_usd_env.sh
 # Test USD functionality
 python test_usd_build.py
 
-echo "💻 Environment ready! Use 'code .' to open VS Code"
+echo "💻 Environment ready! Available commands:"
+echo "  code .                          # Open VS Code"
+echo "  python create_first_cone.py     # Create test geometry"
+echo "  python system_check_fixed.py    # Full system check"
+echo "  deactivate                      # Exit virtual environment"
+
+# Note: Environment is now active in your current shell
