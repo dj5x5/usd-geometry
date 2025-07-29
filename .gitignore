@@ -36,3 +36,6 @@ OpenUSD/
 ~/usd_install/
 usd_install/
 OpenUSD/
+# TBB compatibility fix files
+oneapi-tbb-*.tgz
+oneapi-tbb-*/
