@@ -1,5 +1,5 @@
 #!/bin/bash
-# Technical Artist USD Daily Workflow
+# Technical Artist USD Daily Workflow - ARM Mac Optimized
 
 echo "🎨 USD Technical Artist Environment"
 echo "=================================="
@@ -10,16 +10,13 @@ cd /Users/dymaxion/Documents/PROJECTS/CODE/USD_v03
 # Activate virtual environment
 source .usd_env/bin/activate
 
-# Set up clean environment
-source setup_usd_env.sh
+# Set library path for TBB compatibility (critical for ARM Mac)
+export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
 
-# Quick functionality test
+# Quick USD verification
 python -c "
 from pxr import Usd, UsdGeom
-import sys
-print(f'✅ USD {sys.modules[\"pxr\"].__file__.split(\"/\")[-3]} ready')
-print('✅ Geometry creation enabled')
-print('✅ File export/import ready')
+print('✅ USD ready for geometry creation')
 "
 
 echo ""
@@ -30,7 +27,6 @@ echo "  src/exporters/    - Maya/Houdini integration"
 echo ""
 echo "🚀 Ready for Technical Artist work!"
 echo "Common commands:"
-echo "  code .                          # Open in VS Code"
 echo "  python create_geometry.py       # Create 3D shapes"
 echo "  python analyze_usd.py          # Study USD structure"
-echo ""
+echo "  code .                         # Open in VS Code"

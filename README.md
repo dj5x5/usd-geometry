@@ -35,3 +35,18 @@ Modern Python implementation for 3D geometry creation and manipulation using Pix
 
 ## Quick Test
 
+
+## TBB Compatibility Fix
+
+For ARM Mac users experiencing TBB library conflicts:
+
+```bash
+# Download compatible TBB version
+wget https://github.com/uxlfoundation/oneTBB/releases/download/v2021.9.0/oneapi-tbb-2021.9.0-mac.tgz
+tar -xzf oneapi-tbb-2021.9.0-mac.tgz
+sudo cp -r oneapi-tbb-2021.9.0/lib/* /opt/homebrew/lib/
+
+# Set library path in your shell profile
+export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
+```
+
